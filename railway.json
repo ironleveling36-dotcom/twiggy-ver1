@@ -1,0 +1,89 @@
+{
+  "$schema": "https://railway.app/railway.schema.json",
+  "build": {
+    "builder": "dockerfile"
+  },
+  "deploy": {
+    "numReplicas": 1,
+    "restartPolicyType": "always",
+    "restartPolicyMaxRetries": 10,
+    "startCommand": "python -u bot.py",
+    "restartDelay": 5,
+    "sleepTime": 0
+  },
+  "variables": {
+    "TELEGRAM_TOKEN": {
+      "description": "Telegram Bot Token from @BotFather",
+      "value": ""
+    },
+    "ADMIN_IDS": {
+      "description": "Admin user IDs (comma-separated)",
+      "value": ""
+    },
+    "ADMIN_CHANNEL_ID": {
+      "description": "Admin notification channel ID",
+      "value": "0"
+    },
+    "FORCE_CHANNEL_ID": {
+      "description": "Force users to join this channel (set to 0 to disable)",
+      "value": "0"
+    },
+    "MONGODB_URI": {
+      "description": "MongoDB connection URI (Railway will provide this if MongoDB is added as service)",
+      "value": "mongodb://localhost:27017/swiggy_bot"
+    },
+    "ENVIRONMENT": {
+      "description": "Environment type",
+      "value": "production"
+    },
+    "DEBUG": {
+      "description": "Enable debug mode",
+      "value": "false"
+    },
+    "LOG_LEVEL": {
+      "description": "Logging level",
+      "value": "INFO"
+    },
+    "BOT_CHECK_INTERVAL": {
+      "description": "Health check interval (seconds)",
+      "value": "300"
+    },
+    "SESSION_TIMEOUT": {
+      "description": "Session timeout (seconds)",
+      "value": "3600"
+    },
+    "MAX_CONCURRENT_USERS": {
+      "description": "Max concurrent users",
+      "value": "500"
+    },
+    "JWT_SECRET": {
+      "description": "JWT secret key (CHANGE THIS!)",
+      "value": "change_this_to_random_string"
+    },
+    "ADMIN_SECRET": {
+      "description": "Admin secret key (CHANGE THIS!)",
+      "value": "change_this_to_random_string"
+    },
+    "API_TIMEOUT": {
+      "description": "API request timeout",
+      "value": "120"
+    },
+    "ENABLE_NOTIFICATIONS": {
+      "description": "Enable notifications",
+      "value": "true"
+    },
+    "ENABLE_EXPORT": {
+      "description": "Enable data export",
+      "value": "true"
+    },
+    "ENABLE_ADMIN_PANEL": {
+      "description": "Enable admin panel",
+      "value": "true"
+    },
+    "ENABLE_CHANNEL_CHECK": {
+      "description": "Enable channel subscription check",
+      "value": "true"
+    }
+  },
+  "services": []
+}
